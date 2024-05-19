@@ -14,11 +14,19 @@ public class DividirFactorial {
 
     public long divisio() {
         if (denominador == 0) {
-            return 1;
+            return factorial(numerador);
         }
 
         long resultat = 1;
         for (int i = denominador + 1; i <= numerador; i++) {
+            resultat *= i;
+        }
+        return resultat;
+    }
+
+    private long factorial(int num) {
+        long resultat = 1;
+        for (int i = 1; i <= num; i++) {
             resultat *= i;
         }
         return resultat;
